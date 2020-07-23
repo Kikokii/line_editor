@@ -12,8 +12,11 @@ public:
         : next(nullptr)
     {
     }
+    explicit line(const string &str )
+        : content(str)
+    {
+    }
 
-    line(string, line*);
     void append()
     {
         line* saved = next;
@@ -31,6 +34,7 @@ public:
         }
         (*temp).next = saved;
     }
+
     void delete_();
     void paste();
 };
