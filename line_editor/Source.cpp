@@ -17,5 +17,6 @@ int main(int argc, char** argv)
     
     editor pad;
     pad.loaddata(argv[1]);
+    pad.main_loop();
 
 }

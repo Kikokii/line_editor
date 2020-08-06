@@ -6,6 +6,7 @@ class file {
 private:
     line* head = nullptr;
     line* current = nullptr;
+    friend class editor;
 
 public:
     void goto_(int i)

@@ -6,6 +6,7 @@ private:
     string content;
     line* next;
     friend class file;
+    friend class editor;
 
 public:
     line()
