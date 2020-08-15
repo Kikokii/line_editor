@@ -16,6 +16,12 @@ public:
             current = (*current).next;
         }
     }
+    void gotonextline()
+    {
+        if (current->next) {
+            current = current->next;
+        }
+    }
     void read(istream& fin)
     {
         string temp;
@@ -28,6 +34,9 @@ public:
                 current = current->next;
             }
         }
+    }
+    void write() {
+
     }
     ~file()
     {

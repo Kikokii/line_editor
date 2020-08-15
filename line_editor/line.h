@@ -13,7 +13,7 @@ public:
         : next(nullptr)
     {
     }
-    explicit line(const string &str )
+    explicit line(const string& str)
         : content(str)
     {
     }
@@ -36,6 +36,30 @@ public:
         (*temp).next = saved;
     }
 
-    void delete_();
-    void paste();
+    void delete_()
+    {
+    }
+    void paste()
+    {
+    }
+    line* yank()
+    {
+        auto yankobj = new line();
+        yankobj->content = content;
+        return yankobj;
+    }
+    line* yank(int num)
+    {
+        auto yankobj = new line();
+        yankobj->content = content;
+        line* temp1 = this;
+        line* temp2 = yankobj;
+        for (int i = 1; i < num; i++) {
+            yankobj->next = new line();
+            yankobj->next->content = temp1->next->content;
+            yankobj = yankobj->next;
+            temp1 = temp1->next;
+        }
+        return temp2;
+    }
 };
