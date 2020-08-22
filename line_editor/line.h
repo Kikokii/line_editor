@@ -38,9 +38,28 @@ public:
 
     void delete_()
     {
+
     }
-    void paste()
+    void paste(line *savedlines)
     {
+        if (savedlines==nullptr)
+            return;
+        auto copy = new line();
+        line* firstone = copy;
+        copy->content = savedlines->content;
+        for (; savedlines->next;) {
+            copy->next = new line();
+            copy->next->content = savedlines->next->content;
+            copy=copy->next;
+            savedlines = savedlines->next;
+        }
+        line* lastone = firstone;
+        for (;lastone->next;) {
+            lastone = lastone->next;
+        }
+        lastone->next = this->next;
+        this->next = firstone;
+
     }
     line* yank()
     {

@@ -44,7 +44,7 @@ public:
                         tobeopened.current->delete_();
                         break;
                     case 'p':
-                        tobeopened.current->paste();
+                        tobeopened.current->paste(savedlines);
                         break;
                     case 'y':
                         if (base_match[3].matched)
