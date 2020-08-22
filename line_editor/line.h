@@ -36,10 +36,7 @@ public:
         (*temp).next = saved;
     }
 
-    void delete_()
-    {
-
-    }
+   
     void paste(line *savedlines)
     {
         if (savedlines==nullptr)

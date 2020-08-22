@@ -35,7 +35,22 @@ public:
             }
         }
     }
-    void write() {
+    void write()
+    {
+    }
+    [[nodiscard]] line* delete_()
+    {
+        line* temp = head;
+        if (!head)
+            return nullptr;
+        for (;temp->next!=current; ) {
+            temp = temp->next;
+        }
+        temp->next = current->next;
+        current->next = nullptr;
+        line* deletepart = current;
+        current = temp;
+        return deletepart;
 
     }
     ~file()

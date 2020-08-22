@@ -41,7 +41,7 @@ public:
                         tobeopened.current->append();
                         break;
                     case 'd':
-                        tobeopened.current->delete_();
+                       savedlines= tobeopened.delete_();
                         break;
                     case 'p':
                         tobeopened.current->paste(savedlines);
